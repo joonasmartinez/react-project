@@ -31,7 +31,7 @@ color: rgb(202, 224, 243);
 footer{
     animation: footer 5s ease;
     position: absolute;
-    bottom:5%;
+    bottom:10%;
 }
 
 .Info h2, span{
@@ -104,25 +104,17 @@ header button{
 @keyframes footer {
     0%{
         color:rgba(255, 255, 255, 0);
-        left: 5%;
+        bottom: 5%;
         
     }
     10%{
         color:rgba(255, 255, 255, 0);
-        left: 5%;
+        bottom: 5%;
         
-    }
-    30%{
-        color:rgba(255, 255, 255);
-        left: 10%;
-        
-    }
-    60%{
-        color:rgba(255, 255, 255);
-        left: 10%;
     }
     100%{
-        left:43.9%;
+        color:rgba(255, 255, 255);
+        bottom: 10%;
     }
    
     
