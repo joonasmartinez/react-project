@@ -6,11 +6,11 @@ function App() {
   const [erro, setErro] = useState("");
 
    const updateDatas = async (cepIn)=>{
-     console.log("CEP TENTATIVA:",cepIn)
+
     setErro("")
-      
+     
+    try{
     const { cep, logradouro, bairro, localidade} = await fetch(`https://viacep.com.br/ws/${cepIn.trim().replaceAll("-","").replaceAll(",","").replace(".","")}/json`, {method:'GET'}).then((response) => response.json());
-    console.log(cep, logradouro, bairro, localidade)
     
       if([cep, logradouro, bairro, localidade].every((a)=>{return (a != undefined)}) ){
 
@@ -18,9 +18,12 @@ function App() {
         return document.querySelector(".Info").removeAttribute("hidden")
         
       }
-
-      document.querySelector(".Info").setAttribute("hidden", 0)
-    return setErro(`Algo inesperado aconteceu.`)
+    }catch(e){
+      setErro(`Não foi possível localizar o CEP`);
+    }
+    setErro(`Digite um CEP válido.`);
+  return document.querySelector(".Info").setAttribute("hidden", 0)
+  
   }
 
   return (
@@ -28,7 +31,9 @@ function App() {
 
       <header>
         <h1>BUSCAR CEP</h1>
-        <input placeholder="Insira o CEP" onChange={(e)=>{setCep(e.target.value)}}></input><button onClick={()=>{updateDatas(cepI)}}>OK</button>
+        <form>
+          <input placeholder="Insira o CEP" onChange={(e)=>{setCep(e.target.value)}}></input><button onClick={(e)=>{e.preventDefault(),updateDatas(cepI)}}>OK</button>
+        </form>
         <br></br>
         <h6>{erro}</h6>
       </header>
