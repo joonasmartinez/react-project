@@ -29,7 +29,7 @@ color: rgb(202, 224, 243);
 }
 
 footer{
-    animation: footer 5s ease;
+    animation: footer 2s ease-out;
     position: absolute;
     bottom:10%;
 }
@@ -113,7 +113,7 @@ header button{
         
     }
     100%{
-        color:rgba(255, 255, 255);
+        color: rgb(202, 224, 243);
         bottom: 10%;
     }
    
