@@ -1,0 +1,95 @@
+body{
+margin:0;
+border:0;
+box-sizing: border-box;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+height: 100vh;
+background: linear-gradient(rgb(62, 112, 185)50%,rgb(122, 162, 211));
+text-align: center;
+color: rgb(202, 224, 243);
+}
+
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+}
+.Info{
+    /* display: flex; */
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.384);
+    color:rgb(0, 0, 0);
+    margin-top: 15px;
+    min-width: 400px;
+    border-radius: 15px;
+}
+
+.Info h2, span{
+    text-align: center;
+    margin: 5px 0;
+}
+
+header h1{
+    animation: scale 2s ease;
+}
+header h6{
+    color:rgba(131, 0, 0, 0.836);
+    font-size: 14px;
+    margin:5px;
+}
+
+header input, input::placeholder{
+    color:rgba(255, 255, 255, 0.685);
+    animation: load 1s ease;
+    font-size: 16px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px;
+    outline: none;
+}
+
+header button{
+    animation: back 3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    margin-left: 2px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 6px;
+    cursor: pointer;
+}
+
+@keyframes load {
+    from{
+        transform: rotateX(90deg);
+    }
+    to{
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes scale {
+    from{
+        color:rgba(255, 255, 255, 0);
+    }
+    to{
+        color:rgba(255, 255, 255, 0.685);
+    }
+}
+@keyframes back {
+    from{
+        color:rgba(0, 0, 0, 0);
+        background-color:rgba(255, 255, 255, 0);
+    }
+    to{
+        color:rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+    }
+}
