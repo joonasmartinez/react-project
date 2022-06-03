@@ -28,6 +28,12 @@ color: rgb(202, 224, 243);
     border-radius: 15px;
 }
 
+footer{
+    animation: footer 5s ease;
+    position: absolute;
+    bottom:5%;
+}
+
 .Info h2, span{
     text-align: center;
     margin: 5px 0;
@@ -37,9 +43,10 @@ header h1{
     animation: scale 2s ease;
 }
 header h6{
-    color:rgba(131, 0, 0, 0.836);
+    color:rgba(255, 8, 0, 0.658);
     font-size: 14px;
     margin:5px;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 header input, input::placeholder{
@@ -92,4 +99,31 @@ header button{
         color:rgb(0, 0, 0);
         background-color: rgb(255, 255, 255);
     }
+}
+
+@keyframes footer {
+    0%{
+        color:rgba(255, 255, 255, 0);
+        left: 5%;
+        
+    }
+    10%{
+        color:rgba(255, 255, 255, 0);
+        left: 5%;
+        
+    }
+    30%{
+        color:rgba(255, 255, 255);
+        left: 10%;
+        
+    }
+    60%{
+        color:rgba(255, 255, 255);
+        left: 10%;
+    }
+    100%{
+        left:43.9%;
+    }
+   
+    
 }
